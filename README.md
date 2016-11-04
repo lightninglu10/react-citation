@@ -4,7 +4,7 @@ Takes a blob of JSON, produces a citation metadata viewer
 
 ## Demo & Examples
 
-Live demo: [umnlibraries.github.io](https://umnlibraries.github.io/react-citation/)
+Live demo: [umnlibraries.github.io/react-citation/](https://umnlibraries.github.io/react-citation/)
 
 To build the examples locally, run:
 
