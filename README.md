@@ -5,7 +5,7 @@ __COMPONENT DESCRIPTION GOES HERE__
 
 ## Demo & Examples
 
-Live demo: [chadfennell.github.io/react-citation](http://chadfennell.github.io/react-citation/)
+Live demo: [umnlibraries.github.io](https://umnlibraries.github.io/react-citation/)
 
 To build the examples locally, run:
 
