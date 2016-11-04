@@ -1,7 +1,6 @@
 # react-citation
 
-__COMPONENT DESCRIPTION GOES HERE__
-
+Takes a blob of JSON, produces a citation metadata viewer 
 
 ## Demo & Examples
 
