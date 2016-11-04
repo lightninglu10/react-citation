@@ -10,7 +10,7 @@ Live demo: [chadfennell.github.io/react-citation](http://chadfennell.github.io/r
 To build the examples locally, run:
 
 ```
-npm install
+npm install git:+git@github.com:UMNLibraries/react-citation.git --save
 npm start
 ```
 
@@ -24,28 +24,8 @@ The easiest way to use react-citation is to install it from NPM and include it i
 You can also use the standalone build by including `dist/react-citation.js` in your page. If you use this, make sure you have already included React, and it is available as a global variable.
 
 ```
-npm install react-citation --save
+npm install git:+git@github.com:UMNLibraries/react-citation.git --save
 ```
-
-
-## Usage
-
-__EXPLAIN USAGE HERE__
-
-```
-var ReactCitation = require('react-citation');
-
-<ReactCitation>Example</ReactCitation>
-```
-
-### Properties
-
-* __DOCUMENT PROPERTIES HERE__
-
-### Notes
-
-__ADDITIONAL USAGE NOTES__
-
 
 ## Development (`src`, `lib` and the build process)
 
