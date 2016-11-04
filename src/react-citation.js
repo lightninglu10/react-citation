@@ -1,14 +1,13 @@
 import React from 'react'
 import CiteNavigation from './cite-navigation'
 import Details from '../src/details'
-import ActiveItem from './active-item'
+import ActiveItem from 'react-active-item'
 
 
 class ReactCitation extends React.Component {
   
   constructor(props) {
     super(props)
-    this.state = { items: this.props.items }
     this._player = this._player.bind(this)
   }
 
