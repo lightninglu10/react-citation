@@ -1,7 +1,8 @@
 exports[`Field Tests renders a field with one value 1`] = `
 <div
   className="field field-blah">
-  <label>
+  <label
+    className="label label-default">
     blah
     :
   </label>
@@ -18,6 +19,7 @@ exports[`Field Tests renders a field with one value 1`] = `
       href="http://example1.com">
       bar
     </a>
+    
   </span>
 </div>
 `;

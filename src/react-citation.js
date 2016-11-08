@@ -1,6 +1,6 @@
 import React from 'react'
 import CiteNavigation from './cite-navigation'
-import Details from '../src/details'
+import Details from '../src/cite-details'
 import ActiveItem from 'react-active-item'
 
 

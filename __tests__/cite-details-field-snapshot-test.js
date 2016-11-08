@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import DetailsField from '../src/details-field'
+import DetailsField from '../src/cite-details-field'
 
 describe('Field Tests', () => {
   it("renders a field with one value", function(){  

@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Details from '../src/details'
+import Details from '../src/cite-details'
 
 describe('Details Test', () => {
   it("renders a citation", function(){  

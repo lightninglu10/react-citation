@@ -1,6 +1,6 @@
 exports[`CiteNavigation Tests renders an audio 1`] = `
 <ul
-  className="nav nav-pills">
+  className="citation-navigation nav nav-pills">
   <li
     className=""
     role="presentation">

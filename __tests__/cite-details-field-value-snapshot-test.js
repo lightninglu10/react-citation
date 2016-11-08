@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import DetailsFieldValue from '../src/details-field-value'
+import DetailsFieldValue from '../src/cite-details-field-value'
 
 describe('DetailsFieldValue Test', () => {
   it("renders a field value with a url", function(){  

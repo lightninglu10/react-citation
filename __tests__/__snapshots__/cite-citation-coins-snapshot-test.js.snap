@@ -1,0 +1,20 @@
+exports[`CitationCoins Tests renders a CoINs citation 1`] = `
+<span
+  className="Z3988"
+  title={
+    <span
+      class="citation">
+      &amp;rft.creatorFred
+       09%2F01%2F2001.
+      &amp;rft.title=Fred%20and%20his%20dog
+      &amp;rft.description=A%20boy%20and%20his%20dog
+      &amp;rft.subject=,dogs%2Ccats
+      &amp;rft.description=A%20boy%20and%20his%20dog
+      publisherFred%20and%20coMinnesota Digital Library
+      &amp;rft.type=undefined
+      &amp;rft.format=undefined
+      &amp;rft.rights=undefined
+      &amp;rft.identifier=http%3A%2F%2Fwww.example.com%2Ffred
+    </span>
+  } />
+`;

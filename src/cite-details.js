@@ -1,5 +1,5 @@
 import React from 'react'
-import DetailsField from '../src/details-field'
+import DetailsField from '../src/cite-details-field'
 
 export default class Details extends React.Component {
   constructor(props) {

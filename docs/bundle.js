@@ -5098,6 +5098,207 @@ function activeItem(WrappedComponent) {
   }(_react2.default.Component);
 }
 },{"immutable":1,"react":undefined}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DetailsFieldValue = function (_React$Component) {
+  _inherits(DetailsFieldValue, _React$Component);
+
+  function DetailsFieldValue(props) {
+    _classCallCheck(this, DetailsFieldValue);
+
+    return _possibleConstructorReturn(this, (DetailsFieldValue.__proto__ || Object.getPrototypeOf(DetailsFieldValue)).call(this, props));
+  }
+
+  _createClass(DetailsFieldValue, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          url = _props.url,
+          text = _props.text,
+          delimiter = _props.delimiter;
+
+      var field = url ? _react2.default.createElement(
+        'a',
+        { href: url },
+        text
+      ) : text;
+      return _react2.default.createElement(
+        'span',
+        { className: 'field-value' },
+        field,
+        delimiter
+      );
+    }
+  }]);
+
+  return DetailsFieldValue;
+}(_react2.default.Component);
+
+exports.default = DetailsFieldValue;
+
+
+var propTypes = {
+  text: _react2.default.PropTypes.string.isRequired,
+  url: _react2.default.PropTypes.string
+};
+
+},{"react":undefined}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeDetailsFieldValue = require('./cite-details-field-value');
+
+var _citeDetailsFieldValue2 = _interopRequireDefault(_citeDetailsFieldValue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DetailsField = function (_React$Component) {
+  _inherits(DetailsField, _React$Component);
+
+  function DetailsField(props) {
+    _classCallCheck(this, DetailsField);
+
+    return _possibleConstructorReturn(this, (DetailsField.__proto__ || Object.getPrototypeOf(DetailsField)).call(this, props));
+  }
+
+  _createClass(DetailsField, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          field_values = _props.field_values,
+          label = _props.label,
+          delimiter = _props.delimiter;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'field field-' + label.toLowerCase() },
+        _react2.default.createElement(
+          'label',
+          { className: 'label label-default' },
+          label,
+          ':'
+        ),
+        field_values.map(function (field_value, i) {
+          delimiter = i < field_values.length - 1 ? delimiter : '';
+          return _react2.default.createElement(_citeDetailsFieldValue2.default, _extends({ key: i }, field_value, { delimiter: delimiter }));
+        })
+      );
+    }
+  }]);
+
+  return DetailsField;
+}(_react2.default.Component);
+
+exports.default = DetailsField;
+
+
+var propTypes = {
+  label: _react2.default.PropTypes.string.isRequired,
+  field_values: _react2.default.PropTypes.array.isRequired
+};
+
+},{"./cite-details-field-value":3,"react":undefined}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeDetailsField = require('../src/cite-details-field');
+
+var _citeDetailsField2 = _interopRequireDefault(_citeDetailsField);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Details = function (_React$Component) {
+  _inherits(Details, _React$Component);
+
+  function Details(props) {
+    _classCallCheck(this, Details);
+
+    return _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
+  }
+
+  _createClass(Details, [{
+    key: 'render',
+    value: function render() {
+      var fields = this.props.fields;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        fields.map(function (field, i) {
+          return _react2.default.createElement(_citeDetailsField2.default, _extends({ key: i }, field));
+        })
+      );
+    }
+  }]);
+
+  return Details;
+}(_react2.default.Component);
+
+exports.default = Details;
+
+
+var propTypes = {
+  fields: _react2.default.PropTypes.array.isRequired
+};
+
+Details.propTypes = propTypes;
+
+},{"../src/cite-details-field":4,"react":undefined}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5162,7 +5363,7 @@ var propTypes = {
 
 CiteNavigationItem.propTypes = propTypes;
 
-},{"react":undefined}],4:[function(require,module,exports){
+},{"react":undefined}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5253,208 +5454,7 @@ CiteNavigation.defaultProps = {
 
 CiteNavigation.propTypes = propTypes;
 
-},{"./cite-navigation-item":3,"react":undefined}],5:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DetailsFieldValue = function (_React$Component) {
-  _inherits(DetailsFieldValue, _React$Component);
-
-  function DetailsFieldValue(props) {
-    _classCallCheck(this, DetailsFieldValue);
-
-    return _possibleConstructorReturn(this, (DetailsFieldValue.__proto__ || Object.getPrototypeOf(DetailsFieldValue)).call(this, props));
-  }
-
-  _createClass(DetailsFieldValue, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          url = _props.url,
-          text = _props.text,
-          delimiter = _props.delimiter;
-
-      var field = url ? _react2.default.createElement(
-        'a',
-        { href: url },
-        text
-      ) : text;
-      return _react2.default.createElement(
-        'span',
-        { className: 'field-value' },
-        field,
-        delimiter
-      );
-    }
-  }]);
-
-  return DetailsFieldValue;
-}(_react2.default.Component);
-
-exports.default = DetailsFieldValue;
-
-
-var propTypes = {
-  text: _react2.default.PropTypes.string.isRequired,
-  url: _react2.default.PropTypes.string
-};
-
-},{"react":undefined}],6:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _detailsFieldValue = require('./details-field-value');
-
-var _detailsFieldValue2 = _interopRequireDefault(_detailsFieldValue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DetailsField = function (_React$Component) {
-  _inherits(DetailsField, _React$Component);
-
-  function DetailsField(props) {
-    _classCallCheck(this, DetailsField);
-
-    return _possibleConstructorReturn(this, (DetailsField.__proto__ || Object.getPrototypeOf(DetailsField)).call(this, props));
-  }
-
-  _createClass(DetailsField, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          field_values = _props.field_values,
-          label = _props.label,
-          delimiter = _props.delimiter;
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'field field-' + label.toLowerCase() },
-        _react2.default.createElement(
-          'label',
-          { className: 'label label-default' },
-          label,
-          ':'
-        ),
-        field_values.map(function (field_value, i) {
-          delimiter = i < field_values.length - 1 ? delimiter : '';
-          return _react2.default.createElement(_detailsFieldValue2.default, _extends({ key: i }, field_value, { delimiter: delimiter }));
-        })
-      );
-    }
-  }]);
-
-  return DetailsField;
-}(_react2.default.Component);
-
-exports.default = DetailsField;
-
-
-var propTypes = {
-  label: _react2.default.PropTypes.string.isRequired,
-  field_values: _react2.default.PropTypes.array.isRequired
-};
-
-},{"./details-field-value":5,"react":undefined}],7:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _detailsField = require('../src/details-field');
-
-var _detailsField2 = _interopRequireDefault(_detailsField);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Details = function (_React$Component) {
-  _inherits(Details, _React$Component);
-
-  function Details(props) {
-    _classCallCheck(this, Details);
-
-    return _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
-  }
-
-  _createClass(Details, [{
-    key: 'render',
-    value: function render() {
-      var fields = this.props.fields;
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        fields.map(function (field, i) {
-          return _react2.default.createElement(_detailsField2.default, _extends({ key: i }, field));
-        })
-      );
-    }
-  }]);
-
-  return Details;
-}(_react2.default.Component);
-
-exports.default = Details;
-
-
-var propTypes = {
-  fields: _react2.default.PropTypes.array.isRequired
-};
-
-Details.propTypes = propTypes;
-
-},{"../src/details-field":6,"react":undefined}],"react-citation":[function(require,module,exports){
+},{"./cite-navigation-item":6,"react":undefined}],"react-citation":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5471,9 +5471,9 @@ var _citeNavigation = require('./cite-navigation');
 
 var _citeNavigation2 = _interopRequireDefault(_citeNavigation);
 
-var _details = require('../src/details');
+var _citeDetails = require('../src/cite-details');
 
-var _details2 = _interopRequireDefault(_details);
+var _citeDetails2 = _interopRequireDefault(_citeDetails);
 
 var _reactActiveItem = require('react-active-item');
 
@@ -5505,7 +5505,7 @@ var ReactCitation = function (_React$Component) {
       var item = this.props.getActiveItem();
       switch (item.type) {
         case 'details':
-          return _react2.default.createElement(_details2.default, { fields: item.fields });
+          return _react2.default.createElement(_citeDetails2.default, { fields: item.fields });
           break;
         case 'citation':
           return _react2.default.createElement(
@@ -5547,4 +5547,4 @@ ReactCitation.propTypes = propTypes;
 
 exports.default = (0, _reactActiveItem2.default)(ReactCitation);
 
-},{"../src/details":7,"./cite-navigation":4,"react":undefined,"react-active-item":2}]},{},[]);
+},{"../src/cite-details":5,"./cite-navigation":7,"react":undefined,"react-active-item":2}]},{},[]);
