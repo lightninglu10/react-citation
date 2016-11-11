@@ -1,12 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import CitationChicago from '../src/cite-citation-chicago'
+import CitationWikipedia from '../src/cite-citation-wikipedia'
 
-describe('CitationChicago Tests', () => {
+describe('CitationWikipedia Tests', () => {
   it("renders a citation", function(){  
 
     const fields = {
       creator: 'Fred',
+      type: 'Article',
       creation_date: '09/01/2001',
       title: 'Fred and his dog',
       current_date: 'November 8, 2017',
@@ -14,7 +15,7 @@ describe('CitationChicago Tests', () => {
       url: 'http://www.example.com/fred'
     }
 
-    let component = renderer.create(<CitationChicago field_values={fields} />)
+    let component = renderer.create(<CitationWikipedia field_values={fields} />)
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })

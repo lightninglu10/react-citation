@@ -2,6 +2,7 @@ import React from 'react'
 import CiteNavigation from './cite-navigation'
 import Details from '../src/cite-details'
 import ActiveItem from 'react-active-item'
+import Citation from './cite-citation'
 
 
 class ReactCitation extends React.Component {
@@ -18,7 +19,7 @@ class ReactCitation extends React.Component {
         return <Details fields={ item.fields } />
         break
       case 'citation':
-        return <div>Citation Here</div>
+        return <Citation fields={ item.fields } />
         break
       default:
         return <div>No Viewer Avaialable for type: "{type}"</div>

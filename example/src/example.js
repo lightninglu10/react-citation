@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCitation  from 'react-citation'
 
+let date = new Date();
+
 var App = React.createClass({
 	render () {
     const items = 
@@ -32,23 +34,21 @@ var App = React.createClass({
             type: 'citation',
             label: 'Citation',
             fields: 
-              [
-                {
-                  label: 'Title',
-                  delimiter: ', ',
-                  field_values: [
-                    {text: 'Daemon', url: 'https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731'}
-                  ]
-                },
-                {
-                  label: 'Title',
-                  delimiter: ', ',
-                  field_values: [
-                    {text: 'Snow Crash', url: 'https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash'},
-                    {text: 'Ender\'s Game'}
-                  ]
-                }
-              ]
+              {
+                mappings: [{}],
+                field_values:
+                  {
+                    creator: 'Fred',
+                    ref_name: 'University of Minnesota',
+                    creation_date: '09/01/2001',
+                    title: 'Fred and his dog',
+                    description: 'A boy and his dog',
+                    subject: ['dogs', 'cats'],
+                    contributing_organization: 'Fred and co',
+                    url: 'http://www.example.com/fred',
+                    current_date: Date.now()
+                  }
+              }
             }            
           ]
 		return (<div><ReactCitation items={items} /></div>

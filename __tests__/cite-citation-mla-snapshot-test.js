@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import CitationChicago from '../src/cite-citation-chicago'
+import CitationMla from '../src/cite-citation-mla'
 
-describe('CitationChicago Tests', () => {
+describe('CitationMla Tests', () => {
   it("renders a citation", function(){  
 
     const fields = {
@@ -14,7 +14,7 @@ describe('CitationChicago Tests', () => {
       url: 'http://www.example.com/fred'
     }
 
-    let component = renderer.create(<CitationChicago field_values={fields} />)
+    let component = renderer.create(<CitationMla field_values={fields} />)
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })

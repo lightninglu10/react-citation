@@ -10,7 +10,7 @@ exports[`CitationCoins Tests renders a CoINs citation 1`] = `
       &amp;rft.description=A%20boy%20and%20his%20dog
       &amp;rft.subject=,dogs%2Ccats
       &amp;rft.description=A%20boy%20and%20his%20dog
-      publisherFred%20and%20coMinnesota Digital Library
+      fooFred%20and%20coMinnesota Digital Library
       &amp;rft.type=undefined
       &amp;rft.format=undefined
       &amp;rft.rights=undefined

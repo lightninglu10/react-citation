@@ -5,7 +5,7 @@ exports[`CitationChicago Tests renders a citation 1`] = `
    09/01/2001.
   \"Fred and his dog.\" 
    Fred and co, 
-  Accessed [November 8, 2017].
-  nullhttp://www.example.com/frednull
+  Accessed November 8, 2017.
+  http://www.example.com/fred
 </span>
 `;

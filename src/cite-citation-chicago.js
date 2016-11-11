@@ -12,17 +12,16 @@ export default class CitationChicago extends React.Component {
           [
             {creator: {prefix: '', suffix: '.' }},
             {creation_date: {prefix: ' ', suffix: '.' }},
-            {title: {prefix: '"', suffix: '." ' }},
+            {title: {prefix: '"', suffix: '." '}},
             {contributing_organization: {prefix: ' ', suffix: ', ' }},
-            {current_date: {prefix: 'Accessed [', suffix: '].' }},
-            {url: {prefix: null, suffix: null }}
+            {current_date: {prefix: 'Accessed ', suffix: '.' }},
+            {url: {prefix: '', suffix: '' }}
           ]
     return map
   }
 
   render() {
-    let mappings = this.mappings()
-    return this.props.render_citation(mappings)
+    return this.props.render_citation(this.mappings())
   }
 }
 
@@ -31,7 +30,8 @@ const propTypes = {
   creation_date: React.PropTypes.string,
   title: React.PropTypes.string,
   contributing_organization: React.PropTypes.string,
-  url: React.PropTypes.string
+  url: React.PropTypes.string,
+  mapping: React.PropTypes.object
 }
 
 CitationChicago.propTypes = propTypes

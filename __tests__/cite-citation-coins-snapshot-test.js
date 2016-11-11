@@ -15,7 +15,12 @@ describe('CitationCoins Tests', () => {
       url: 'http://www.example.com/fred'
     }
 
-    let component = renderer.create(<CitationCoins {...fields} />)
+    // Test overriding the core mapping
+    const mappings = [
+      {contributing_organization: {prefix: 'foo', suffix: 'Minnesota Digital Library', formatters: [encodeURIComponent]}}
+    ]
+
+    let component = renderer.create(<CitationCoins field_values={fields} mappings={mappings} />)
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
