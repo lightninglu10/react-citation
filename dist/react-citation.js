@@ -5108,6 +5108,553 @@ exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _class;
+
+var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeCitationRender = require('../src/cite-citation-render');
+
+var _citeCitationRender2 = _interopRequireDefault(_citeCitationRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CitationChicago = (0, _citeCitationRender2.default)(_class = function (_React$Component) {
+  _inherits(CitationChicago, _React$Component);
+
+  function CitationChicago(props) {
+    _classCallCheck(this, CitationChicago);
+
+    return _possibleConstructorReturn(this, (CitationChicago.__proto__ || Object.getPrototypeOf(CitationChicago)).call(this, props));
+  }
+
+  _createClass(CitationChicago, [{
+    key: 'mappings',
+    value: function mappings() {
+      var map = [{ creator: { prefix: '', suffix: '.' } }, { creation_date: { prefix: ' ', suffix: '.' } }, { title: { prefix: '"', suffix: '." ' } }, { contributing_organization: { prefix: ' ', suffix: ', ' } }, { current_date: { prefix: 'Accessed ', suffix: '.' } }, { url: { prefix: '', suffix: '' } }];
+      return map;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.render_citation(this.mappings());
+    }
+  }]);
+
+  return CitationChicago;
+}(_react2.default.Component)) || _class;
+
+exports.default = CitationChicago;
+
+
+var propTypes = {
+  creator: _react2.default.PropTypes.string,
+  creation_date: _react2.default.PropTypes.string,
+  title: _react2.default.PropTypes.string,
+  contributing_organization: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string,
+  mapping: _react2.default.PropTypes.object
+};
+
+CitationChicago.propTypes = propTypes;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"../src/cite-citation-render":6}],4:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class;
+
+var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeCitationRender = require('../src/cite-citation-render');
+
+var _citeCitationRender2 = _interopRequireDefault(_citeCitationRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// TODO: Refactor out Minnesota Digital Library
+// Mappings should probably be a 
+var CitationChicago = (0, _citeCitationRender2.default)(_class = function (_React$Component) {
+  _inherits(CitationChicago, _React$Component);
+
+  function CitationChicago(props) {
+    _classCallCheck(this, CitationChicago);
+
+    var _this = _possibleConstructorReturn(this, (CitationChicago.__proto__ || Object.getPrototypeOf(CitationChicago)).call(this, props));
+
+    _this.mappings = _this.mappings.bind(_this);
+    return _this;
+  }
+
+  _createClass(CitationChicago, [{
+    key: 'mulitvalue_field',
+    value: function mulitvalue_field(values) {
+      values.join(',');
+    }
+  }, {
+    key: 'mappings',
+    value: function mappings() {
+      var defaultMapping = [{ creator: { prefix: '&amp;rft.creator', suffix: '', formatters: [encodeURIComponent] } }, { creation_date: { prefix: ' ', suffix: '.', formatters: [encodeURIComponent] } }, { title: { prefix: '&amp;rft.title=', suffix: '', formatters: [encodeURIComponent] } }, { description: { prefix: '&amp;rft.description=', suffix: '', formatters: [encodeURIComponent] } }, { subject: { prefix: '&amp;rft.subject=', suffix: '', formatters: [this.mulitvalue_field, encodeURIComponent] } }, { description: { prefix: '&amp;rft.description=', suffix: '', formatters: [encodeURIComponent] } }, { contributing_organization: { prefix: 'publisher', suffix: '', formatters: [encodeURIComponent] } }, { type: { prefix: '&amp;rft.type=', suffix: '', formatters: [encodeURIComponent] } }, { format: { prefix: '&amp;rft.format=', suffix: '', formatters: [encodeURIComponent] } }, { rights: { prefix: '&amp;rft.rights=', suffix: '', formatters: [encodeURIComponent] } }, { url: { prefix: '&amp;rft.identifier=', suffix: '', formatters: [encodeURIComponent] } }];
+      return this.props.override_mappings(defaultMapping);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var fields = this.props.render_citation(this.mappings());
+      var title = "ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc" + fields;
+      return _react2.default.createElement('span', { className: 'Z3988', title: fields });
+    }
+  }]);
+
+  return CitationChicago;
+}(_react2.default.Component)) || _class;
+
+exports.default = CitationChicago;
+
+
+var propTypes = {
+  creator: _react2.default.PropTypes.string,
+  creation_date: _react2.default.PropTypes.string,
+  title: _react2.default.PropTypes.string,
+  description: _react2.default.PropTypes.string,
+  contributing_organization: _react2.default.PropTypes.string,
+  type: _react2.default.PropTypes.string,
+  format: _react2.default.PropTypes.string,
+  rights: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string,
+  mapping: _react2.default.PropTypes.object
+};
+
+CitationChicago.defaultProps = {
+  mappings: [{}]
+};
+
+CitationChicago.propTypes = propTypes;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"../src/cite-citation-render":6}],5:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class;
+
+var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeCitationRender = require('../src/cite-citation-render');
+
+var _citeCitationRender2 = _interopRequireDefault(_citeCitationRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CitationMla = (0, _citeCitationRender2.default)(_class = function (_React$Component) {
+  _inherits(CitationMla, _React$Component);
+
+  function CitationMla(props) {
+    _classCallCheck(this, CitationMla);
+
+    return _possibleConstructorReturn(this, (CitationMla.__proto__ || Object.getPrototypeOf(CitationMla)).call(this, props));
+  }
+
+  _createClass(CitationMla, [{
+    key: 'italicize',
+    value: function italicize(text) {
+      return '<i>' + text + '</i>';
+    }
+  }, {
+    key: 'removeProtocols',
+    value: function removeProtocols(url) {
+      return url.replace(/http:\/\/|https:\/\//i, '');
+    }
+  }, {
+    key: 'format_date',
+    value: function format_date(timestamp) {
+      var date = new Date(timestamp);
+      var months = ['Jan', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+      var month = months[date.getMonth()];
+      var year = date.getFullYear();
+      var day = date.getDate();
+      return day + ' ' + month + ' ' + year;
+    }
+  }, {
+    key: 'mappings',
+    value: function mappings() {
+      var map = [{ creator: { prefix: '', suffix: '.' } }, { title: { prefix: ' ', suffix: '.', formatters: [this.italicize] } }, { creation_date: { prefix: ' ', suffix: '.' } }, { contributing_organization: { prefix: ' ', suffix: ', ' } }, { url: { prefix: '', suffix: '', formatters: [this.removeProtocols] } }, { current_date: { prefix: ' Accessed ', suffix: '.', formatters: [this.format_date] } }];
+      return map;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.render_citation(this.mappings());
+    }
+  }]);
+
+  return CitationMla;
+}(_react2.default.Component)) || _class;
+
+exports.default = CitationMla;
+
+
+var propTypes = {
+  creator: _react2.default.PropTypes.string,
+  creation_date: _react2.default.PropTypes.string,
+  title: _react2.default.PropTypes.object,
+  contributing_organization: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string,
+  mapping: _react2.default.PropTypes.object
+};
+
+CitationMla.propTypes = propTypes;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"../src/cite-citation-render":6}],6:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.default = citationRender;
+
+var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function citationRender(CitationFormat) {
+  return function (_React$Component) {
+    _inherits(Citation, _React$Component);
+
+    function Citation(props) {
+      _classCallCheck(this, Citation);
+
+      var _this = _possibleConstructorReturn(this, (Citation.__proto__ || Object.getPrototypeOf(Citation)).call(this, props));
+
+      _this.render_citation = _this.render_citation.bind(_this);
+      _this._format = _this._format.bind(_this);
+      _this.override_mappings = _this.override_mappings.bind(_this);
+      _this._override_mapping = _this._override_mapping.bind(_this);
+      _this._values = _this._values.bind(_this);
+      return _this;
+    }
+
+    _createClass(Citation, [{
+      key: 'override_mappings',
+      value: function override_mappings(mappings) {
+        var _this2 = this;
+
+        return mappings.map(function (mapping) {
+          return _this2._override_mapping(mapping)[0];
+        });
+        return mapped;
+      }
+    }, {
+      key: 'render_citation',
+      value: function render_citation(mappings) {
+        return _react2.default.createElement(
+          'span',
+          { 'class': 'citation' },
+          _react2.default.createElement('div', { dangerouslySetInnerHTML: this._values(mappings) })
+        );
+      }
+    }, {
+      key: '_values',
+      value: function _values(mappings) {
+        var affix = this._affix;
+        var format = this._format;
+        var props = this.props;
+        var values = [];
+        mappings.map(function (field, i) {
+          var field_name = Object.keys(field)[0];
+          var config = field[field_name];
+          var formatted = format(props.field_values[field_name], config.formatters);
+          values.push(affix(formatted, config.prefix, config.suffix));
+        });
+        return { __html: values.join('') };
+      }
+    }, {
+      key: '_affix',
+      value: function _affix(value, prefix, suffix) {
+        return value ? prefix + value + suffix : '';
+      }
+    }, {
+      key: '_format',
+      value: function _format(value) {
+        var formatters = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [function (value) {
+          return value;
+        }];
+
+        return formatters.map(function (formatter) {
+          return formatter(value);
+        }, value);
+      }
+    }, {
+      key: '_override_mapping',
+      value: function _override_mapping(mapping) {
+        return this.props.mappings.map(function (mapping_override) {
+          if (mapping[Object.keys(mapping_override)[0]]) {
+            return mapping_override;
+          } else {
+            return mapping;
+          }
+        });
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(CitationFormat, _extends({}, this.props, {
+          override_mappings: this.override_mappings,
+          render_citation: this.render_citation }));
+      }
+    }]);
+
+    return Citation;
+  }(_react2.default.Component);
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],7:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class;
+
+var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeCitationRender = require('../src/cite-citation-render');
+
+var _citeCitationRender2 = _interopRequireDefault(_citeCitationRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CitationMla = (0, _citeCitationRender2.default)(_class = function (_React$Component) {
+  _inherits(CitationMla, _React$Component);
+
+  function CitationMla(props) {
+    _classCallCheck(this, CitationMla);
+
+    return _possibleConstructorReturn(this, (CitationMla.__proto__ || Object.getPrototypeOf(CitationMla)).call(this, props));
+  }
+
+  _createClass(CitationMla, [{
+    key: 'italicize',
+    value: function italicize(text) {
+      return '<i>' + text + '</i>';
+    }
+  }, {
+    key: 'removeProtocols',
+    value: function removeProtocols(url) {
+      return url.replace(/http:\/\/|https:\/\//i, '');
+    }
+  }, {
+    key: 'mappings',
+    value: function mappings() {
+      var map = [{ ref_name: { prefix: '<ref name=', suffix: '> {{' } }, { url: { prefix: 'cite web | url=', suffix: '' } }, { type: { prefix: ' | title= (', suffix: ')' } }, { title: { prefix: '', suffix: ',' } }, { creation_date: { prefix: '(', suffix: ')' } }, { creator: { prefix: ' | author=', suffix: '' } }, { current_date: { prefix: ' | accessdate=', suffix: '' } }, { contributing_organization: { prefix: ' | publisher=', suffix: '' } }];
+      return map;
+    }
+  }, {
+    key: 'wrapper',
+    value: function wrapper(citation) {
+      return citation + '}} </ref>';
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.render_citation(this.mappings());
+    }
+  }]);
+
+  return CitationMla;
+}(_react2.default.Component)) || _class;
+
+exports.default = CitationMla;
+
+
+var propTypes = {
+  ref_name: _react2.default.PropTypes.string,
+  creator: _react2.default.PropTypes.string,
+  creation_date: _react2.default.PropTypes.string,
+  title: _react2.default.PropTypes.string,
+  contributing_organization: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string,
+  mapping: _react2.default.PropTypes.object
+};
+
+CitationMla.propTypes = propTypes;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"../src/cite-citation-render":6}],8:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _citeCitationRender = require('../src/cite-citation-render');
+
+var _citeCitationRender2 = _interopRequireDefault(_citeCitationRender);
+
+var _citeCitationCoins = require('./cite-citation-coins');
+
+var _citeCitationCoins2 = _interopRequireDefault(_citeCitationCoins);
+
+var _citeCitationChicago = require('./cite-citation-chicago');
+
+var _citeCitationChicago2 = _interopRequireDefault(_citeCitationChicago);
+
+var _citeCitationMla = require('./cite-citation-mla');
+
+var _citeCitationMla2 = _interopRequireDefault(_citeCitationMla);
+
+var _citeCitationWikipedia = require('./cite-citation-wikipedia');
+
+var _citeCitationWikipedia2 = _interopRequireDefault(_citeCitationWikipedia);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Citation = function (_React$Component) {
+  _inherits(Citation, _React$Component);
+
+  function Citation(props) {
+    _classCallCheck(this, Citation);
+
+    return _possibleConstructorReturn(this, (Citation.__proto__ || Object.getPrototypeOf(Citation)).call(this, props));
+  }
+
+  _createClass(Citation, [{
+    key: 'render',
+    value: function render() {
+      var fields = this.props.fields;
+      return _react2.default.createElement(
+        'div',
+        { className: 'citation' },
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(_citeCitationCoins2.default, fields)
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(_citeCitationChicago2.default, fields)
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(_citeCitationMla2.default, fields)
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(_citeCitationWikipedia2.default, fields)
+        )
+      );
+    }
+  }]);
+
+  return Citation;
+}(_react2.default.Component);
+
+exports.default = Citation;
+
+
+var propTypes = {
+  fields: _react2.default.PropTypes.array,
+  mapping: _react2.default.PropTypes.object
+};
+
+_citeCitationChicago2.default.propTypes = propTypes;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"../src/cite-citation-render":6,"./cite-citation-chicago":3,"./cite-citation-coins":4,"./cite-citation-mla":5,"./cite-citation-wikipedia":7}],9:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var _react2 = _interopRequireDefault(_react);
@@ -5163,7 +5710,7 @@ var propTypes = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -5238,7 +5785,7 @@ var propTypes = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cite-details-field-value":3}],5:[function(require,module,exports){
+},{"./cite-details-field-value":9}],11:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -5304,7 +5851,7 @@ var propTypes = {
 Details.propTypes = propTypes;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../src/cite-details-field":4}],6:[function(require,module,exports){
+},{"../src/cite-details-field":10}],12:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -5371,7 +5918,7 @@ var propTypes = {
 CiteNavigationItem.propTypes = propTypes;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -5464,7 +6011,7 @@ CiteNavigation.defaultProps = {
 CiteNavigation.propTypes = propTypes;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cite-navigation-item":6}],8:[function(require,module,exports){
+},{"./cite-navigation-item":12}],14:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -5489,6 +6036,10 @@ var _citeDetails2 = _interopRequireDefault(_citeDetails);
 var _reactActiveItem = require('react-active-item');
 
 var _reactActiveItem2 = _interopRequireDefault(_reactActiveItem);
+
+var _citeCitation = require('./cite-citation');
+
+var _citeCitation2 = _interopRequireDefault(_citeCitation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5519,11 +6070,7 @@ var ReactCitation = function (_React$Component) {
           return _react2.default.createElement(_citeDetails2.default, { fields: item.fields });
           break;
         case 'citation':
-          return _react2.default.createElement(
-            'div',
-            null,
-            'Citation Here'
-          );
+          return _react2.default.createElement(_citeCitation2.default, { fields: item.fields });
           break;
         default:
           return _react2.default.createElement(
@@ -5559,5 +6106,5 @@ ReactCitation.propTypes = propTypes;
 exports.default = (0, _reactActiveItem2.default)(ReactCitation);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../src/cite-details":5,"./cite-navigation":7,"react-active-item":2}]},{},[8])(8)
+},{"../src/cite-details":11,"./cite-citation":8,"./cite-navigation":13,"react-active-item":2}]},{},[14])(14)
 });
