@@ -5144,7 +5144,7 @@ var CitationChicago = (0, _citeCitationRender2.default)(_class = function (_Reac
   }, {
     key: 'render',
     value: function render() {
-      return this.props.render_citation(this.mappings());
+      return this.props.render_citation({ mappings: this.mappings() });
     }
   }]);
 
@@ -5223,9 +5223,8 @@ var CitationChicago = (0, _citeCitationRender2.default)(_class = function (_Reac
   }, {
     key: 'render',
     value: function render() {
-      var fields = this.props.render_citation(this.mappings());
-      var title = "ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc" + fields;
-      return _react2.default.createElement('span', { className: 'Z3988', title: fields });
+      var title = "ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc";
+      return this.props.render_citation({ prefix: '<span className="Z3988" title=' + title, suffix: '</span>', mappings: this.mappings(), render_html: true });
     }
   }]);
 
@@ -5322,7 +5321,7 @@ var CitationMla = (0, _citeCitationRender2.default)(_class = function (_React$Co
   }, {
     key: 'render',
     value: function render() {
-      return this.props.render_citation(this.mappings());
+      return this.props.render_citation({ mappings: this.mappings(), render_html: true });
     }
   }]);
 
@@ -5399,12 +5398,31 @@ function citationRender(CitationFormat) {
       }
     }, {
       key: 'render_citation',
-      value: function render_citation(mappings) {
-        return _react2.default.createElement(
-          'span',
-          { 'class': 'citation' },
-          _react2.default.createElement('div', { dangerouslySetInnerHTML: this._values(mappings) })
-        );
+      value: function render_citation(_ref) {
+        var _ref$mappings = _ref.mappings,
+            mappings = _ref$mappings === undefined ? [] : _ref$mappings,
+            _ref$render_html = _ref.render_html,
+            render_html = _ref$render_html === undefined ? false : _ref$render_html,
+            _ref$prefix = _ref.prefix,
+            prefix = _ref$prefix === undefined ? '' : _ref$prefix,
+            _ref$suffix = _ref.suffix,
+            suffix = _ref$suffix === undefined ? '' : _ref$suffix;
+
+        if (render_html) {
+          return _react2.default.createElement(
+            'span',
+            null,
+            _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: prefix + this._values(mappings) + suffix } })
+          );
+        } else {
+          return _react2.default.createElement(
+            'span',
+            null,
+            prefix,
+            this._values(mappings),
+            prefix
+          );
+        }
       }
     }, {
       key: '_values',
@@ -5415,11 +5433,14 @@ function citationRender(CitationFormat) {
         var values = [];
         mappings.map(function (field, i) {
           var field_name = Object.keys(field)[0];
-          var config = field[field_name];
-          var formatted = format(props.field_values[field_name], config.formatters);
-          values.push(affix(formatted, config.prefix, config.suffix));
+          var val = props.field_values[field_name];
+          if (val) {
+            var config = field[field_name];
+            var formatted = format(val, config.formatters);
+            values.push(affix(formatted, config.prefix, config.suffix));
+          }
         });
-        return { __html: values.join('') };
+        return values.join('');
       }
     }, {
       key: '_affix',
@@ -5501,11 +5522,6 @@ var CitationMla = (0, _citeCitationRender2.default)(_class = function (_React$Co
   }
 
   _createClass(CitationMla, [{
-    key: 'italicize',
-    value: function italicize(text) {
-      return '<i>' + text + '</i>';
-    }
-  }, {
     key: 'removeProtocols',
     value: function removeProtocols(url) {
       return url.replace(/http:\/\/|https:\/\//i, '');
@@ -5513,18 +5529,13 @@ var CitationMla = (0, _citeCitationRender2.default)(_class = function (_React$Co
   }, {
     key: 'mappings',
     value: function mappings() {
-      var map = [{ ref_name: { prefix: '<ref name=', suffix: '> {{' } }, { url: { prefix: 'cite web | url=', suffix: '' } }, { type: { prefix: ' | title= (', suffix: ')' } }, { title: { prefix: '', suffix: ',' } }, { creation_date: { prefix: '(', suffix: ')' } }, { creator: { prefix: ' | author=', suffix: '' } }, { current_date: { prefix: ' | accessdate=', suffix: '' } }, { contributing_organization: { prefix: ' | publisher=', suffix: '' } }];
+      var map = [{ ref_name: { prefix: '<ref name=', suffix: '> {{' } }, { url: { prefix: 'cite web | url=', suffix: '' } }, { type: { prefix: ' | title= (', suffix: ') ' } }, { title: { prefix: '', suffix: ',' } }, { creation_date: { prefix: '(', suffix: ')' } }, { creator: { prefix: ' | author=', suffix: '' } }, { current_date: { prefix: ' | accessdate=', suffix: '' } }, { contributing_organization: { prefix: ' | publisher=', suffix: '}} </ref>' } }];
       return map;
-    }
-  }, {
-    key: 'wrapper',
-    value: function wrapper(citation) {
-      return citation + '}} </ref>';
     }
   }, {
     key: 'render',
     value: function render() {
-      return this.props.render_citation(this.mappings());
+      return this.props.render_citation({ mappings: this.mappings() });
     }
   }]);
 
