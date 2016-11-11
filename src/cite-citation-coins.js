@@ -35,9 +35,8 @@ export default class CitationChicago extends React.Component {
   }
 
   render() {
-    let fields = this.props.render_citation(this.mappings())
-    let title = "ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc" + fields
-    return (<span className="Z3988" title={fields}></span>)
+    let title = "ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc"
+    return this.props.render_citation({prefix: '<span className="Z3988" title=' + title, suffix: '</span>', mappings: this.mappings(), render_html: true})
   }
 }
 

@@ -7,10 +7,6 @@ export default class CitationMla extends React.Component {
     super(props)
   }
 
-  italicize(text) {
-    return '<i>' + text + '</i>'
-  }
-
   removeProtocols(url) {
     return url.replace(/http:\/\/|https:\/\//i, '')
   }
@@ -20,22 +16,18 @@ export default class CitationMla extends React.Component {
           [
             {ref_name: {prefix: '<ref name=', suffix: '> {{' }},
             {url: {prefix: 'cite web | url=', suffix: ''}},
-            {type: {prefix: ' | title= (', suffix: ')'}},
+            {type: {prefix: ' | title= (', suffix: ') '}},
             {title: {prefix: '', suffix: ','}},
             {creation_date: {prefix: '(', suffix: ')' }},
             {creator: {prefix: ' | author=', suffix: '' }},
             {current_date: {prefix: ' | accessdate=', suffix: '' }},
-            {contributing_organization: {prefix: ' | publisher=', suffix: '' }}
+            {contributing_organization: {prefix: ' | publisher=', suffix: '}} </ref>' }}
           ]
     return map
   }
 
-  wrapper(citation) {
-    return citation + '}} </ref>'
-  }
-
   render() {
-    return this.props.render_citation(this.mappings())
+    return this.props.render_citation({mappings: this.mappings()})
   }
 }
 

@@ -39,7 +39,7 @@ export default class CitationMla extends React.Component {
   }
 
   render() {
-    return this.props.render_citation(this.mappings())
+    return this.props.render_citation({mappings: this.mappings(), render_html: true})
   }
 }
 

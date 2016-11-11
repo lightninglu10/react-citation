@@ -21,7 +21,7 @@ export default class CitationChicago extends React.Component {
   }
 
   render() {
-    return this.props.render_citation(this.mappings())
+    return this.props.render_citation({mappings: this.mappings()})
   }
 }
 

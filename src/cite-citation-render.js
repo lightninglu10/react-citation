@@ -18,10 +18,12 @@ export default function citationRender(CitationFormat) {
       return mapped
     }
     
-    render_citation(mappings) {
-      return (<span class="citation">
-                <div dangerouslySetInnerHTML={this._values(mappings)} />
-              </span>)
+    render_citation({ mappings = [], render_html = false, prefix = '', suffix = '' }) {
+      if (render_html) {
+        return <span><div dangerouslySetInnerHTML={{__html: prefix + this._values(mappings) + suffix}} /></span>
+      } else {
+        return <span>{prefix}{this._values(mappings)}{prefix}</span>
+      }
     }
 
     _values(mappings) {
@@ -31,11 +33,14 @@ export default function citationRender(CitationFormat) {
       let values = []
       mappings.map(function(field, i) {
         let field_name = Object.keys(field)[0]
-        let config     = field[field_name]
-        let formatted  = format(props.field_values[field_name], config.formatters)
-        values.push(affix(formatted, config.prefix, config.suffix))
+        let val        = props.field_values[field_name]
+        if (val){
+          let config     = field[field_name]
+          let formatted  = format(val, config.formatters)
+          values.push(affix(formatted, config.prefix, config.suffix))
+        }
       })
-      return {__html: values.join('') }
+      return values.join('')
     }
 
     _affix(value, prefix, suffix) {

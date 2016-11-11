@@ -42,6 +42,7 @@ var App = React.createClass({
                     ref_name: 'University of Minnesota',
                     creation_date: '09/01/2001',
                     title: 'Fred and his dog',
+                    type: 'image',
                     description: 'A boy and his dog',
                     subject: ['dogs', 'cats'],
                     contributing_organization: 'Fred and co',
