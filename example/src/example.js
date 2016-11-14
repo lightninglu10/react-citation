@@ -50,7 +50,27 @@ var App = React.createClass({
                     current_date: Date.now()
                   }
               }
-            }            
+            },
+            {
+              focus: false,
+              type: 'download',
+              label: 'Download',
+              fields: 
+                [
+                  {
+                    src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1744',
+                    url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1744'
+                  },
+                  {
+                    src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1746',
+                    url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1746'
+                  },
+                  {
+                    src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1747',
+                    url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1747'
+                  }
+                ]
+              }
           ]
 		return (<div><ReactCitation items={items} /></div>
 		);
