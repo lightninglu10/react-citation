@@ -65,6 +65,11 @@ var App = _react2.default.createClass({
         src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1747',
         url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1747'
       }]
+    }, {
+      focus: false,
+      type: 'transcript',
+      label: 'Transcript',
+      transcript: 'This is a transcript of something or other'
     }];
     return _react2.default.createElement(
       'div',

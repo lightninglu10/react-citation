@@ -5905,11 +5905,7 @@ var Download = function (_React$Component) {
         'div',
         null,
         fields.map(function (field, i) {
-          return _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(_citeThumbnail2.default, _extends({ key: i }, field, { text: 'Download' }))
-          );
+          return _react2.default.createElement(_citeThumbnail2.default, _extends({ key: i }, field, { text: 'Download' }));
         })
       );
     }
@@ -6099,7 +6095,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Thumbnail = function Thumbnail(props) {
   return _react2.default.createElement(
     "div",
-    { className: "col-md-2" },
+    { className: "col-md-2 row" },
     _react2.default.createElement(
       "a",
       { className: "thumbnail", hgref: props.url },
@@ -6113,12 +6109,42 @@ var Thumbnail = function Thumbnail(props) {
 
 var propTypes = {
   url: _react2.default.PropTypes.string.isRequired,
-  src: _react2.default.PropTypes.string.isRequired
+  src: _react2.default.PropTypes.string.isRequired,
+  text: _react2.default.PropTypes.string
 };
 
 Thumbnail.propTypes = propTypes;
 
 exports.default = Thumbnail;
+
+},{"react":undefined}],16:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Transcript = function Transcript(props) {
+  return _react2.default.createElement(
+    "div",
+    { className: "transcript" },
+    props.transcript
+  );
+};
+
+var propTypes = {
+  transcript: _react2.default.PropTypes.string.isRequired
+};
+
+Transcript.propTypes = propTypes;
+
+exports.default = Transcript;
 
 },{"react":undefined}],"react-citation":[function(require,module,exports){
 'use strict';
@@ -6152,6 +6178,10 @@ var _citeCitation2 = _interopRequireDefault(_citeCitation);
 var _citeDownload = require('./cite-download');
 
 var _citeDownload2 = _interopRequireDefault(_citeDownload);
+
+var _citeTranscript = require('./cite-transcript');
+
+var _citeTranscript2 = _interopRequireDefault(_citeTranscript);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6187,6 +6217,9 @@ var ReactCitation = function (_React$Component) {
         case 'download':
           return _react2.default.createElement(_citeDownload2.default, { fields: item.fields });
           break;
+        case 'transcript':
+          return _react2.default.createElement(_citeTranscript2.default, { transcript: item.transcript });
+          break;
         default:
           return _react2.default.createElement(
             'div',
@@ -6220,4 +6253,4 @@ ReactCitation.propTypes = propTypes;
 
 exports.default = (0, _reactActiveItem2.default)(ReactCitation);
 
-},{"../src/cite-details":11,"./cite-citation":8,"./cite-download":12,"./cite-navigation":14,"react":undefined,"react-active-item":2}]},{},[]);
+},{"../src/cite-details":11,"./cite-citation":8,"./cite-download":12,"./cite-navigation":14,"./cite-transcript":16,"react":undefined,"react-active-item":2}]},{},[]);
