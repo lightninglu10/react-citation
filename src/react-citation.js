@@ -4,7 +4,7 @@ import Details from '../src/cite-details'
 import ActiveItem from 'react-active-item'
 import Citation from './cite-citation'
 import Download from './cite-download'
-
+import Transcript from './cite-transcript'
 
 class ReactCitation extends React.Component {
   
@@ -24,6 +24,9 @@ class ReactCitation extends React.Component {
         break
       case 'download':
         return <Download fields={ item.fields } />
+        break
+      case 'transcript':
+        return <Transcript transcript={ item.transcript } />
         break
       default:
         return <div>No Viewer Avaialable for type: "{type}"</div>

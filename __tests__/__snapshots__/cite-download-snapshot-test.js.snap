@@ -5,7 +5,7 @@ exports[`CitationDownload Tests produces download links 1`] = `
     <div
       className="col-md-2">
       <a
-        className="thumbnail"
+        className="thumbnail row"
         hgref="http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1744">
         <img
           src="http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1744" />
@@ -21,7 +21,7 @@ exports[`CitationDownload Tests produces download links 1`] = `
     <div
       className="col-md-2">
       <a
-        className="thumbnail"
+        className="thumbnail row"
         hgref="http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1746">
         <img
           src="http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1746" />
@@ -37,7 +37,7 @@ exports[`CitationDownload Tests produces download links 1`] = `
     <div
       className="col-md-2">
       <a
-        className="thumbnail"
+        className="thumbnail row"
         hgref="http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1747">
         <img
           src="http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1747" />

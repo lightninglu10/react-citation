@@ -70,6 +70,12 @@ var App = React.createClass({
                     url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1747'
                   }
                 ]
+              },
+              {
+                focus: false,
+                type: 'transcript',
+                label: 'Transcript',
+                transcript: 'This is a transcript of something or other'
               }
           ]
 		return (<div><ReactCitation items={items} /></div>
