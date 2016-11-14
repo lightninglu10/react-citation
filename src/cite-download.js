@@ -11,7 +11,7 @@ export default class Download extends React.Component {
     return (
         <div>
           {fields.map(function(field, i) {
-            return <div className="row"><Thumbnail key={i} {...field} text="Download"/></div>
+            return <Thumbnail key={i} {...field} text="Download"/>
           })}
         </div>
       )
