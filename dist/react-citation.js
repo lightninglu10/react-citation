@@ -5623,14 +5623,29 @@ var Citation = function (_React$Component) {
           _react2.default.createElement(_citeCitationCoins2.default, fields)
         ),
         _react2.default.createElement(
+          'h3',
+          null,
+          'Chicago Style'
+        ),
+        _react2.default.createElement(
           'p',
           null,
           _react2.default.createElement(_citeCitationChicago2.default, fields)
         ),
         _react2.default.createElement(
+          'h3',
+          null,
+          'MLA Style'
+        ),
+        _react2.default.createElement(
           'p',
           null,
           _react2.default.createElement(_citeCitationMla2.default, fields)
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Wikipedia Style'
         ),
         _react2.default.createElement(
           'p',
