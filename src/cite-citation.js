@@ -15,8 +15,11 @@ export default class Citation extends React.Component {
     return (
         <div className="citation">
           <p><CitationCoins {...fields} /></p>
+          <h3>Chicago Style</h3>
           <p><CitationChicago {...fields} /></p>
+          <h3>MLA Style</h3>
           <p><CitationMla {...fields} /></p>
+          <h3>Wikipedia Style</h3>
           <p><CitationWikipedia {...fields} /></p>
         </div>
       )
