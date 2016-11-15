@@ -1,5 +1,5 @@
 import React from 'react'
-import citationRender from '../src/cite-citation-render'
+import citationRender from './cite-citation-render'
 
 class CitationChicago extends React.Component {
   constructor(props) {

@@ -1,7 +1,8 @@
 import React from 'react'
-import CiteNavigation from './cite-navigation'
-import Details from '../src/cite-details'
 import ActiveItem from 'react-active-item'
+
+import CiteNavigation from './cite-navigation'
+import Details from './cite-details'
 import Citation from './cite-citation'
 import Download from './cite-download'
 import Transcript from './cite-transcript'
