@@ -1,5 +1,5 @@
 import React from 'react'
-import CiteThumbnail from '../src/cite-thumbnail'
+import CiteThumbnail from './cite-thumbnail'
 
 export default class Download extends React.Component {
   constructor(props) {
