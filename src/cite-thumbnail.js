@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Thumbnail = props => (<div className="row">
+const CiteThumbnail = props => (<div className="row">
                               <div className="col-md-2">
                                 <a className="thumbnail" hgref={props.url}>
                                   <img src={props.src} /><span className="glyphicon glyphicon-download-alt"></span> {props.text}
@@ -14,7 +14,7 @@ const propTypes = {
   text: React.PropTypes.string
 }
 
-Thumbnail.propTypes = propTypes
+CiteThumbnail.propTypes = propTypes
 
-export default Thumbnail
+export default CiteThumbnail
 

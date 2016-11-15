@@ -1,11 +1,7 @@
 import React from 'react'
 import citationRender from '../src/cite-citation-render'
 
-
-// TODO: Refactor out Minnesota Digital Library
-// Mappings should probably be a 
-@citationRender
-export default class CitationChicago extends React.Component {
+class CitationCoins extends React.Component {
   constructor(props) {
     super(props)
     this.mappings = this.mappings.bind(this)
@@ -53,9 +49,10 @@ const propTypes = {
   mapping: React.PropTypes.object
 }
 
-CitationChicago.defaultProps = {
+CitationCoins.defaultProps = {
   mappings: [{}]
 }
 
+CitationCoins.propTypes = propTypes
 
-CitationChicago.propTypes = propTypes
+export default citationRender(CitationCoins)

@@ -1,8 +1,7 @@
 import React from 'react'
 import citationRender from '../src/cite-citation-render'
 
-@citationRender
-export default class CitationChicago extends React.Component {
+class CitationChicago extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -35,3 +34,5 @@ const propTypes = {
 }
 
 CitationChicago.propTypes = propTypes
+
+export default citationRender(CitationChicago)

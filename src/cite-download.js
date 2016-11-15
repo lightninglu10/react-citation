@@ -1,5 +1,5 @@
 import React from 'react'
-import Thumbnail from '../src/cite-thumbnail'
+import CiteThumbnail from '../src/cite-thumbnail'
 
 export default class Download extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Download extends React.Component {
     return (
         <div>
           {fields.map(function(field, i) {
-            return <Thumbnail key={i} {...field} text="Download"/>
+            return <CiteThumbnail key={i} {...field} text="Download"/>
           })}
         </div>
       )

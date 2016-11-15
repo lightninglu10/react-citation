@@ -1,8 +1,7 @@
 import React from 'react'
 import citationRender from '../src/cite-citation-render'
 
-@citationRender
-export default class CitationMla extends React.Component {
+class CitationMla extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -53,3 +52,5 @@ const propTypes = {
 }
 
 CitationMla.propTypes = propTypes
+
+export default citationRender(CitationMla)

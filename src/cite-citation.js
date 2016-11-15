@@ -1,5 +1,4 @@
 import React from 'react'
-import citationCitation from '../src/cite-citation-render'
 import CitationCoins from './cite-citation-coins'
 import CitationChicago from './cite-citation-chicago'
 import CitationMla from './cite-citation-mla'
