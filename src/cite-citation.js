@@ -13,13 +13,13 @@ export default class Citation extends React.Component {
     let fields = this.props.fields
     return (
         <div className="citation">
-          <p><CitationCoins {...fields} /></p>
+          <div><CitationCoins {...fields} /></div>
           <h3>Chicago Style</h3>
-          <p><CitationChicago {...fields} /></p>
+          <div><CitationChicago {...fields} /></div>
           <h3>MLA Style</h3>
-          <p><CitationMla {...fields} /></p>
+          <div><CitationMla {...fields} /></div>
           <h3>Wikipedia Style</h3>
-          <p><CitationWikipedia {...fields} /></p>
+          <div><CitationWikipedia {...fields} /></div>
         </div>
       )
   }
