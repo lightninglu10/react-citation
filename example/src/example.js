@@ -16,7 +16,6 @@ var App = React.createClass({
               [
                 {
                   label: 'Title',
-                  delimiter: ', ',
                   field_values: [
                     {text: 'Daemon', url: 'https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731'}
                   ]
