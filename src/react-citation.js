@@ -11,10 +11,10 @@ class ReactCitation extends React.Component {
   
   constructor(props) {
     super(props)
-    this._player = this._player.bind(this)
+    this._viewer = this._viewer.bind(this)
   }
 
-  _player() {
+  _viewer() {
     let item = this.props.getActiveItem()
     switch(item.type) {
       case 'details':
@@ -35,10 +35,13 @@ class ReactCitation extends React.Component {
   }
  
   render() {
+    let type = this.props.getActiveItem().type
     return (
              <div>
                 <CiteNavigation {...this.props} />
-                {this._player()}
+                <div className={"cite-" + type}>
+                  {this._viewer()}
+                </div>
              </div>
            )
   }
