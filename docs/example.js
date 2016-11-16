@@ -26,7 +26,6 @@ var App = _react2.default.createClass({
       label: 'Details',
       fields: [{
         label: 'Title',
-        delimiter: ', ',
         field_values: [{ text: 'Daemon', url: 'https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731' }]
       }, {
         label: 'Creator',

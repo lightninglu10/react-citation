@@ -5767,6 +5767,8 @@ exports.default = DetailsField;
 
 var propTypes = {
   label: _react2.default.PropTypes.string.isRequired,
+  delimiter: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string,
   field_values: _react2.default.PropTypes.array.isRequired
 };
 
@@ -6174,13 +6176,13 @@ var ReactCitation = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ReactCitation.__proto__ || Object.getPrototypeOf(ReactCitation)).call(this, props));
 
-    _this._player = _this._player.bind(_this);
+    _this._viewer = _this._viewer.bind(_this);
     return _this;
   }
 
   _createClass(ReactCitation, [{
-    key: '_player',
-    value: function _player() {
+    key: '_viewer',
+    value: function _viewer() {
       var item = this.props.getActiveItem();
       switch (item.type) {
         case 'details':
@@ -6208,11 +6210,16 @@ var ReactCitation = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var type = this.props.getActiveItem().type;
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_citeNavigation2.default, this.props),
-        this._player()
+        _react2.default.createElement(
+          'div',
+          { className: "cite-" + type },
+          this._viewer()
+        )
       );
     }
   }]);
