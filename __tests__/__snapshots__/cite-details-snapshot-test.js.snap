@@ -1,41 +1,52 @@
 exports[`Details Test renders a citation 1`] = `
-<div>
+<dl
+  className="dl-horizontal">
   <div
-    className="field field-title">
-    <label
-      className="label label-default">
-      Title
-      :
-    </label>
-    <span
-      className="field-value">
-      <a
-        href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731">
-        Daemon
-      </a>
-      
-    </span>
+    className="field field-some-field">
+    <dt>
+      <label
+        className="label label-default">
+        Some Field
+        :
+      </label>
+    </dt>
+    <dl>
+      <span
+        className="field-value">
+        <a
+          href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731">
+          Daemon
+        </a>
+        
+      </span>
+    </dl>
   </div>
   <div
     className="field field-title">
-    <label
-      className="label label-default">
-      Title
-      :
-    </label>
-    <span
-      className="field-value">
-      <a
-        href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash">
-        Snow Crash
-      </a>
-      , 
-    </span>
-    <span
-      className="field-value">
-      Ender\'s Game
-      
-    </span>
+    <dt>
+      <label
+        className="label label-default">
+        Title
+        :
+      </label>
+    </dt>
+    <dl>
+      <span
+        className="field-value">
+        <a
+          href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash">
+          Snow Crash
+        </a>
+        , 
+      </span>
+    </dl>
+    <dl>
+      <span
+        className="field-value">
+        Ender\'s Game
+        
+      </span>
+    </dl>
   </div>
-</div>
+</dl>
 `;

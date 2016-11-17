@@ -9,11 +9,11 @@ export default class Details extends React.Component {
   render() {
     let { fields }  = this.props
     return (
-        <div>
+        <dl className="dl-horizontal">
           {fields.map(function(field, i) {
             return <DetailsField key={i} {...field} />  
           })}
-        </div>
+        </dl>
       )
   }
 }
