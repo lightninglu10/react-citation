@@ -7,11 +7,11 @@ export default class Download extends React.Component {
   }
 
   render() {
-    let { fields }  = this.props
+    let { fields, label }  = this.props
     return (
         <div>
           {fields.map(function(field, i) {
-            return <CiteThumbnail key={i} {...field} text="Download"/>
+            return <CiteThumbnail key={i} {...field}/>
           })}
         </div>
       )

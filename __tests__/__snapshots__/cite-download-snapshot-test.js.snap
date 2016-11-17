@@ -12,7 +12,6 @@ exports[`CitationDownload Tests produces download links 1`] = `
         <span
           className="glyphicon glyphicon-download-alt" />
          
-        Download
       </a>
     </div>
   </div>
@@ -28,7 +27,6 @@ exports[`CitationDownload Tests produces download links 1`] = `
         <span
           className="glyphicon glyphicon-download-alt" />
          
-        Download
       </a>
     </div>
   </div>
@@ -44,7 +42,6 @@ exports[`CitationDownload Tests produces download links 1`] = `
         <span
           className="glyphicon glyphicon-download-alt" />
          
-        Download
       </a>
     </div>
   </div>
