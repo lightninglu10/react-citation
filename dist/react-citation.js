@@ -5893,13 +5893,15 @@ var Download = function (_React$Component) {
   _createClass(Download, [{
     key: 'render',
     value: function render() {
-      var fields = this.props.fields;
+      var _props = this.props,
+          fields = _props.fields,
+          label = _props.label;
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'row' },
         fields.map(function (field, i) {
-          return _react2.default.createElement(_citeThumbnail2.default, _extends({ key: i }, field, { text: 'Download' }));
+          return _react2.default.createElement(_citeThumbnail2.default, _extends({ key: i }, field));
         })
       );
     }
@@ -6093,18 +6095,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CiteThumbnail = function CiteThumbnail(props) {
   return _react2.default.createElement(
     "div",
-    { className: "row" },
+    { className: "col-md-2 thumb" },
     _react2.default.createElement(
-      "div",
-      { className: "col-md-2" },
-      _react2.default.createElement(
-        "a",
-        { className: "thumbnail", href: props.url },
-        _react2.default.createElement("img", { src: props.src }),
-        _react2.default.createElement("span", { className: "glyphicon glyphicon-download-alt" }),
-        " ",
-        props.text
-      )
+      "a",
+      { className: "thumbnail", href: props.url },
+      _react2.default.createElement("img", { src: props.src }),
+      _react2.default.createElement("span", { className: "glyphicon glyphicon-download-alt" }),
+      " ",
+      props.label
     )
   );
 };
@@ -6112,7 +6110,7 @@ var CiteThumbnail = function CiteThumbnail(props) {
 var propTypes = {
   url: _react2.default.PropTypes.string.isRequired,
   src: _react2.default.PropTypes.string.isRequired,
-  text: _react2.default.PropTypes.string
+  label: _react2.default.PropTypes.string
 };
 
 CiteThumbnail.propTypes = propTypes;

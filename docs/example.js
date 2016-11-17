@@ -21,7 +21,7 @@ var App = _react2.default.createClass({
   displayName: 'App',
   render: function render() {
     var items = [{
-      focus: true,
+      focus: false,
       type: 'details',
       label: 'Details',
       fields: [{
@@ -51,16 +51,19 @@ var App = _react2.default.createClass({
         }
       }
     }, {
-      focus: false,
+      focus: true,
       type: 'download',
       label: 'Download',
       fields: [{
+        label: 'Download',
         src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1744',
         url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1744'
       }, {
+        label: 'Download',
         src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1746',
         url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1746'
       }, {
+        label: 'Download',
         src: 'http://lib-mdl-dev.oit.umn.edu/thumbnails/irrc:1747',
         url: 'http://reflections.mndigital.org/utils/getstream/collection/irrc/id/1747'
       }]
