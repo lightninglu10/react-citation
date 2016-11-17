@@ -1,17 +1,27 @@
 import React from 'react'
+import DownloadSource from './cite-download-source'
 
-const CiteThumbnail = props =>  (
-                                  <div className="col-md-2 thumb">
-                                    <a className="thumbnail" href={props.url}>
-                                      <img src={props.src} /><span className="glyphicon glyphicon-download-alt"></span> {props.label}
-                                    </a>
-                                  </div>
-                                ) 
+class CiteThumbnail extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    let { thumbnail, sources } = this.props
+    return  (
+              <div className="col-md-2 download-source">
+                <img className="thumbnail" src={thumbnail} />
+                {sources.map((source, i) => {
+                  return <DownloadSource key={i} {...source} />
+                })}
+              </div>
+            )
+  }
+}
 
 const propTypes = {
-  url: React.PropTypes.string.isRequired,
-  src: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string
+  thumbnail: React.PropTypes.string.isRequired,
+  sources: React.PropTypes.array.isRequired
 }
 
 CiteThumbnail.propTypes = propTypes
