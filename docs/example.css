@@ -62,8 +62,12 @@ label {
 .citation-navigation {
   margin-bottom: 10px;
 }
-.thumb {
+.download-source {
   display: inline-block;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+.download-source img {
+  display: inline-block;
 }

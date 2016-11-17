@@ -5836,6 +5836,70 @@ var propTypes = {
 Details.propTypes = propTypes;
 
 },{"./cite-details-field":10,"react":undefined}],12:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CiteDownloadSource = function (_React$Component) {
+  _inherits(CiteDownloadSource, _React$Component);
+
+  function CiteDownloadSource(props) {
+    _classCallCheck(this, CiteDownloadSource);
+
+    return _possibleConstructorReturn(this, (CiteDownloadSource.__proto__ || Object.getPrototypeOf(CiteDownloadSource)).call(this, props));
+  }
+
+  _createClass(CiteDownloadSource, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          src = _props.src;
+
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "a",
+          { href: src },
+          _react2.default.createElement("span", { className: "glyphicon glyphicon-download-alt" }),
+          " ",
+          label
+        )
+      );
+    }
+  }]);
+
+  return CiteDownloadSource;
+}(_react2.default.Component);
+
+exports.default = CiteDownloadSource;
+
+
+var propTypes = {
+  src: _react2.default.PropTypes.string.isRequired,
+  label: _react2.default.PropTypes.string.isRequired
+};
+
+CiteDownloadSource.propTypes = propTypes;
+
+},{"react":undefined}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5900,7 +5964,7 @@ var propTypes = {
 
 Download.propTypes = propTypes;
 
-},{"./cite-thumbnail":15,"react":undefined}],13:[function(require,module,exports){
+},{"./cite-thumbnail":16,"react":undefined}],14:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5964,7 +6028,7 @@ var propTypes = {
 
 CiteNavigationItem.propTypes = propTypes;
 
-},{"react":undefined}],14:[function(require,module,exports){
+},{"react":undefined}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6054,45 +6118,73 @@ CiteNavigation.defaultProps = {
 
 CiteNavigation.propTypes = propTypes;
 
-},{"./cite-navigation-item":13,"react":undefined}],15:[function(require,module,exports){
-"use strict";
+},{"./cite-navigation-item":14,"react":undefined}],16:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _citeDownloadSource = require('./cite-download-source');
+
+var _citeDownloadSource2 = _interopRequireDefault(_citeDownloadSource);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CiteThumbnail = function CiteThumbnail(props) {
-  return _react2.default.createElement(
-    "div",
-    { className: "col-md-2 thumb" },
-    _react2.default.createElement(
-      "a",
-      { className: "thumbnail", href: props.url },
-      _react2.default.createElement("img", { src: props.src }),
-      _react2.default.createElement("span", { className: "glyphicon glyphicon-download-alt" }),
-      " ",
-      props.label
-    )
-  );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CiteThumbnail = function (_React$Component) {
+  _inherits(CiteThumbnail, _React$Component);
+
+  function CiteThumbnail(props) {
+    _classCallCheck(this, CiteThumbnail);
+
+    return _possibleConstructorReturn(this, (CiteThumbnail.__proto__ || Object.getPrototypeOf(CiteThumbnail)).call(this, props));
+  }
+
+  _createClass(CiteThumbnail, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          thumbnail = _props.thumbnail,
+          sources = _props.sources;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'col-md-2 download-source' },
+        _react2.default.createElement('img', { className: 'thumbnail', src: thumbnail }),
+        sources.map(function (source, i) {
+          return _react2.default.createElement(_citeDownloadSource2.default, _extends({ key: i }, source));
+        })
+      );
+    }
+  }]);
+
+  return CiteThumbnail;
+}(_react2.default.Component);
 
 var propTypes = {
-  url: _react2.default.PropTypes.string.isRequired,
-  src: _react2.default.PropTypes.string.isRequired,
-  label: _react2.default.PropTypes.string
+  thumbnail: _react2.default.PropTypes.string.isRequired,
+  sources: _react2.default.PropTypes.array.isRequired
 };
 
 CiteThumbnail.propTypes = propTypes;
 
 exports.default = CiteThumbnail;
 
-},{"react":undefined}],16:[function(require,module,exports){
+},{"./cite-download-source":12,"react":undefined}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6233,4 +6325,4 @@ ReactCitation.propTypes = propTypes;
 
 exports.default = (0, _reactActiveItem2.default)(ReactCitation);
 
-},{"./cite-citation":8,"./cite-details":11,"./cite-download":12,"./cite-navigation":14,"./cite-transcript":16,"react":undefined,"react-active-item":2}]},{},[]);
+},{"./cite-citation":8,"./cite-details":11,"./cite-download":13,"./cite-navigation":15,"./cite-transcript":17,"react":undefined,"react-active-item":2}]},{},[]);
