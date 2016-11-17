@@ -1,6 +1,5 @@
 exports[`Field Tests renders a field with one value 1`] = `
-<div
-  className="field field-blah">
+<span>
   <dt>
     <label
       className="label label-default">
@@ -8,24 +7,18 @@ exports[`Field Tests renders a field with one value 1`] = `
       :
     </label>
   </dt>
-  <dl>
-    <span
-      className="field-value">
-      <a
-        href="http://example.com">
-        foo
-      </a>
-    </span>
-  </dl>
-  <dl>
-    <span
-      className="field-value">
-      <a
-        href="http://example1.com">
-        bar
-      </a>
-      
-    </span>
-  </dl>
-</div>
+  <dd>
+    <a
+      href="http://example.com">
+      foo
+    </a>
+  </dd>
+  <dd>
+    <a
+      href="http://example1.com">
+      bar
+    </a>
+    
+  </dd>
+</span>
 `;

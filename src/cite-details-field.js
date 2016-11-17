@@ -9,20 +9,16 @@ export default class DetailsField extends React.Component {
   render() {
     let { field_values, label, delimiter} = this.props
     return (
-             <div className={'field field-' + label.toLowerCase().replace(/\s/g, '-')}>
+             <span>
                 <dt>
                   <label className='label label-default'>{label}:</label>
                 </dt>
-
                 {field_values.map(function(field_value, i) {
                   delimiter = (i < field_values.length - 1) ? delimiter : ''
-                  return  (
-                            <dl>
-                             <DetailsFieldValue key={i} {...field_value} delimiter={delimiter}/>
-                            </dl>
-                          )
+                  let field = (field_value.url) ? <a href={field_value.url}>{field_value.text}</a> : field_value.text
+                  return  (<dd>{field}{delimiter}</dd>)
                 })}
-             </div>
+             </span>
            )
   }
 }
