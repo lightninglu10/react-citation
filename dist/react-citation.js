@@ -5759,7 +5759,7 @@ var DetailsField = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'field field-' + label.toLowerCase() },
+        { className: 'field field-' + label.toLowerCase().replace(/\s/g, '-') },
         _react2.default.createElement(
           'label',
           { className: 'label label-default' },
