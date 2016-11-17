@@ -21,7 +21,7 @@ var App = _react2.default.createClass({
   displayName: 'App',
   render: function render() {
     var items = [{
-      focus: false,
+      focus: true,
       type: 'details',
       label: 'Details',
       fields: [{
@@ -51,7 +51,7 @@ var App = _react2.default.createClass({
         }
       }
     }, {
-      focus: true,
+      focus: false,
       type: 'download',
       label: 'Download',
       fields: [{

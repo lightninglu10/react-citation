@@ -5746,14 +5746,22 @@ var DetailsField = function (_React$Component) {
         'div',
         { className: 'field field-' + label.toLowerCase().replace(/\s/g, '-') },
         _react2.default.createElement(
-          'label',
-          { className: 'label label-default' },
-          label,
-          ':'
+          'dt',
+          null,
+          _react2.default.createElement(
+            'label',
+            { className: 'label label-default' },
+            label,
+            ':'
+          )
         ),
         field_values.map(function (field_value, i) {
           delimiter = i < field_values.length - 1 ? delimiter : '';
-          return _react2.default.createElement(_citeDetailsFieldValue2.default, _extends({ key: i }, field_value, { delimiter: delimiter }));
+          return _react2.default.createElement(
+            'dl',
+            null,
+            _react2.default.createElement(_citeDetailsFieldValue2.default, _extends({ key: i }, field_value, { delimiter: delimiter }))
+          );
         })
       );
     }
@@ -5814,8 +5822,8 @@ var Details = function (_React$Component) {
       var fields = this.props.fields;
 
       return _react2.default.createElement(
-        'div',
-        null,
+        'dl',
+        { className: 'dl-horizontal' },
         fields.map(function (field, i) {
           return _react2.default.createElement(_citeDetailsField2.default, _extends({ key: i }, field));
         })

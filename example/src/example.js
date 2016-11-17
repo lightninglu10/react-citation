@@ -9,7 +9,7 @@ var App = React.createClass({
     const items = 
         [
           {
-            focus: false,
+            focus: true,
             type: 'details',
             label: 'Details',
             fields: 
@@ -51,7 +51,7 @@ var App = React.createClass({
               }
             },
             {
-              focus: true,
+              focus: false,
               type: 'download',
               label: 'Download',
               fields: 
