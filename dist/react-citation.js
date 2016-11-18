@@ -5760,7 +5760,7 @@ var DetailsField = function (_React$Component) {
         null,
         _react2.default.createElement(
           'dt',
-          null,
+          { className: 'col-sm-3 field-label' },
           _react2.default.createElement(
             'label',
             { className: 'label label-default' },
@@ -5768,20 +5768,24 @@ var DetailsField = function (_React$Component) {
             ':'
           )
         ),
-        field_values.map(function (field_value, i) {
-          delimiter = i < field_values.length - 1 ? delimiter : '';
-          var field = field_value.url ? _react2.default.createElement(
-            'a',
-            { href: field_value.url },
-            field_value.text
-          ) : field_value.text;
-          return _react2.default.createElement(
-            'dd',
-            null,
-            field,
-            delimiter
-          );
-        })
+        _react2.default.createElement(
+          'dd',
+          { className: 'col-sm-9 field-definition' },
+          field_values.map(function (field_value, i) {
+            delimiter = i < field_values.length - 1 ? delimiter : '';
+            var field = field_value.url ? _react2.default.createElement(
+              'a',
+              { href: field_value.url },
+              field_value.text
+            ) : field_value.text;
+            return _react2.default.createElement(
+              'span',
+              null,
+              field,
+              delimiter
+            );
+          })
+        )
       );
     }
   }]);
@@ -5844,7 +5848,7 @@ var Details = function (_React$Component) {
 
       return _react2.default.createElement(
         'dl',
-        { className: 'dl-horizontal' },
+        { className: 'row' },
         fields.map(function (field, i) {
           return _react2.default.createElement(_citeDetailsField2.default, _extends({ key: i }, field));
         })
