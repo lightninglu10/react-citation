@@ -9,7 +9,7 @@ export default class Details extends React.Component {
   render() {
     let { fields }  = this.props
     return (
-        <dl className="dl-horizontal">
+        <dl className="row">
           {fields.map(function(field, i) {
             return <DetailsField key={i} {...field} />  
           })}
