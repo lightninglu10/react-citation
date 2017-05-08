@@ -5677,7 +5677,7 @@ var DetailsFieldValue = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DetailsFieldValue.__proto__ || Object.getPrototypeOf(DetailsFieldValue)).call(this, props));
 
-    _this._field = _this._field.bind(_this);
+    _this._fields = _this._fields.bind(_this);
     return _this;
   }
 
@@ -5687,27 +5687,14 @@ var DetailsFieldValue = function (_React$Component) {
       return { __html: value };
     }
   }, {
-    key: '_field',
-    value: function _field() {
-      if (this.props.url) {
-        return _react2.default.createElement(
-          'a',
-          { href: this.props.url },
-          this.props.text
-        );
-      } else {
-        return _react2.default.createElement('div', { dangerouslySetInnerHTML: this._createMarkup(this.props.text) });
-      }
+    key: '_fields',
+    value: function _fields() {
+      return this._createMarkup('' + this.props.text + this.props.delimiter);
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'span',
-        null,
-        this._field(),
-        this.props.delimiter
-      );
+      return _react2.default.createElement('span', { dangerouslySetInnerHTML: this._fields() });
     }
   }]);
 
