@@ -11,18 +11,24 @@ exports[`Field Tests renders a field with one value 1`] = `
   </dt>
   <dd
     className="field-definition">
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "fooundefined",
-        }
-      } />
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "bar",
-        }
-      } />
+    <span>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<a href=\"http://example.com\">foo</a>",
+          }
+        } />
+      
+    </span>
+    <span>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<a href=\"http://example1.com\">bar</a>",
+          }
+        } />
+      
+    </span>
   </dd>
 </span>
 `;
