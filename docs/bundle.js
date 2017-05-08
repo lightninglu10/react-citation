@@ -5664,7 +5664,11 @@ var DetailsFieldValue = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DetailsFieldValue.__proto__ || Object.getPrototypeOf(DetailsFieldValue)).call(this, props));
 
-    _this._fields = _this._fields.bind(_this);
+    _this._field = _this._field.bind(_this);
+    _this._link = _this._link.bind(_this);
+    _this._danger = _this._danger.bind(_this);
+    _this._delimiter = _this._delimiter.bind(_this);
+    _this._text = _this._text.bind(_this);
     return _this;
   }
 
@@ -5674,14 +5678,43 @@ var DetailsFieldValue = function (_React$Component) {
       return { __html: value };
     }
   }, {
-    key: '_fields',
-    value: function _fields() {
-      return this._createMarkup('' + this.props.text + this.props.delimiter);
+    key: '_link',
+    value: function _link() {
+      return '<a href="' + this.props.url + '">' + this.props.text + '</a>';
+    }
+  }, {
+    key: '_field',
+    value: function _field() {
+      if (this.props.url) {
+        return this._danger(this._link());
+      } else {
+        return this._danger(this.props.text);
+      }
+    }
+  }, {
+    key: '_danger',
+    value: function _danger(html) {
+      return _react2.default.createElement('div', { dangerouslySetInnerHTML: this._createMarkup(html) });
+    }
+  }, {
+    key: '_text',
+    value: function _text() {
+      return this.props.text == 'undefined' ? this._danger(this.props.text) : '';
+    }
+  }, {
+    key: '_delimiter',
+    value: function _delimiter() {
+      return this.props.delimiter == 'undefined' ? this._danger(this.props.delimiter) : '';
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('span', { dangerouslySetInnerHTML: this._fields() });
+      return _react2.default.createElement(
+        'span',
+        null,
+        this._field(),
+        this._delimiter()
+      );
     }
   }]);
 

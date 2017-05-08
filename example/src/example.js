@@ -28,7 +28,7 @@ var App = React.createClass({
                 },
                 {
                   label: 'Flergh',
-                  delimiter: "<br />",
+                  delimiter: '<br />',
                   field_values: [
                     {text: 'Blerch', url: 'https://glerpflergdrpdrp.com'},
                     {text: 'Thwap', url: 'http://thwapperspthhddthhter.com'}

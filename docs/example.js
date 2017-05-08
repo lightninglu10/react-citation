@@ -32,7 +32,7 @@ var App = _react2.default.createClass({
         field_values: [{ text: 'Daniel Suarez' }]
       }, {
         label: 'Flergh',
-        delimiter: "<br />",
+        delimiter: '<br />',
         field_values: [{ text: 'Blerch', url: 'https://glerpflergdrpdrp.com' }, { text: 'Thwap', url: 'http://thwapperspthhddthhter.com' }]
       }, {
         label: 'Fiscal Sponsor',
