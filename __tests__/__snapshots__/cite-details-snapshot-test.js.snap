@@ -2,7 +2,7 @@ exports[`Details Test renders a citation 1`] = `
 <dl
   className="row details">
   <span
-    className="detail-field-somefield}">
+    className="detail-field-somefield">
     <dt
       className="field-label">
       <label
@@ -13,17 +13,16 @@ exports[`Details Test renders a citation 1`] = `
     </dt>
     <dd
       className="field-definition">
-      <span>
-        <a
-          href="https://www.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731">
-          Daemon
-        </a>
-        
-      </span>
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Daemon",
+          }
+        } />
     </dd>
   </span>
   <span
-    className="detail-field-title}">
+    className="detail-field-title">
     <dt
       className="field-label">
       <label
@@ -34,22 +33,18 @@ exports[`Details Test renders a citation 1`] = `
     </dt>
     <dd
       className="field-definition">
-      <span>
-        <a
-          href="https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=sr_1_1?s=books&ie=UTF8&qid=1478114241&sr=1-1&keywords=snowcrash">
-          Snow Crash
-        </a>
-        , 
-      </span>
-      <span>
-        <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "Ender\'s Game",
-            }
-          } />
-        
-      </span>
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Snow Crash, ",
+          }
+        } />
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Ender\'s Game",
+          }
+        } />
     </dd>
   </span>
 </dl>

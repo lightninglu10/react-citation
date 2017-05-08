@@ -3,23 +3,19 @@ import React from 'react'
 export default class DetailsFieldValue extends React.Component {
   constructor(props) {
     super(props)
-    this._field = this._field.bind(this)
+    this._fields = this._fields.bind(this)
   }
 
   _createMarkup(value) {
     return ({__html: value})
   }
 
-  _field() {
-    if (this.props.url) {
-      return <a href={this.props.url}>{this.props.text}</a>
-    } else {
-      return <div dangerouslySetInnerHTML={this._createMarkup(this.props.text)} />
-    }
+  _fields() {
+    return this._createMarkup(`${this.props.text}${this.props.delimiter}`)
   }
 
   render() {
-    return <span>{this._field()}{this.props.delimiter}</span>
+    return <span dangerouslySetInnerHTML={this._fields()}></span>
   }
 }
 

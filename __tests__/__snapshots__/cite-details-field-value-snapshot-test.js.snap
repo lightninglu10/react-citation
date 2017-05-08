@@ -1,19 +1,17 @@
 exports[`DetailsFieldValue Test renders a field value with a url 1`] = `
-<span>
-  <a
-    href="http://www.example.com">
-    Rama
-  </a>
-</span>
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Ramaundefined",
+    }
+  } />
 `;
 
 exports[`DetailsFieldValue Test renders a field value without a url 1`] = `
-<span>
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "Rama",
-      }
-    } />
-</span>
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Ramaundefined",
+    }
+  } />
 `;

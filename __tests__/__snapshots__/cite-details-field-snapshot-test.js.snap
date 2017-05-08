@@ -1,6 +1,6 @@
 exports[`Field Tests renders a field with one value 1`] = `
 <span
-  className="detail-field-blah}">
+  className="detail-field-blah">
   <dt
     className="field-label">
     <label
@@ -11,19 +11,18 @@ exports[`Field Tests renders a field with one value 1`] = `
   </dt>
   <dd
     className="field-definition">
-    <span>
-      <a
-        href="http://example.com">
-        foo
-      </a>
-    </span>
-    <span>
-      <a
-        href="http://example1.com">
-        bar
-      </a>
-      
-    </span>
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "fooundefined",
+        }
+      } />
+    <span
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "bar",
+        }
+      } />
   </dd>
 </span>
 `;
