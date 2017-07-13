@@ -16,7 +16,7 @@
     "classnames": "^2.1.2",    
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-active-item": "git:+git@github.com:UMNLibraries/react-active-item.git"
+    "react-active-item": "git:+git@github.com:UMNLibraries/react-active-item.git#e49bc7cc670806e82fea7"
   },
   "devDependencies": {
     "react-component-gulp-tasks": "git:+git@github.com:cwalv/react-component-gulp-tasks.git#0253184f9d",
