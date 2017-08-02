@@ -5605,6 +5605,7 @@ var Citation = function (_React$Component) {
   _createClass(Citation, [{
     key: '_citationType',
     value: function _citationType() {
+      var fields = this.props.fields;
       switch (this.props.citationType) {
         case 'chicago':
           return _react2.default.createElement(_citeCitationChicago2.default, _extends({ className: 'chicago' }, fields));
@@ -5617,14 +5618,13 @@ var Citation = function (_React$Component) {
             'div',
             null,
             'No Viewer Avaialable for type: ',
-            item.type
+            this.props.citationType
           );
       }
     }
   }, {
     key: 'render',
     value: function render() {
-      var fields = this.props.fields;
       return _react2.default.createElement(
         'div',
         { className: 'citation' },

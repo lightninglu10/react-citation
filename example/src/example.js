@@ -9,7 +9,7 @@ var App = React.createClass({
     const items =
         [
           {
-            focus: true,
+            focus: false,
             type: 'details',
             label: 'Details',
             fields:
@@ -43,7 +43,7 @@ var App = React.createClass({
               ]
             },
           {
-            focus: false,
+            focus: true,
             type: 'citation',
             label: 'Citation',
             fields:
@@ -130,7 +130,7 @@ var App = React.createClass({
                 transcript: 'This is a transcript of something or other'
               }
           ]
-		return (<div><ReactCitation items={items} /></div>
+		return (<div><ReactCitation items={items} citationType={'mla'} /></div>
 		);
 	}
 });

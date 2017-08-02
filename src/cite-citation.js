@@ -12,6 +12,7 @@ export default class Citation extends React.Component {
   }
 
   _citationType() {
+    let fields = this.props.fields;
     switch (this.props.citationType) {
       case 'chicago':
         return <CitationChicago className="chicago" {...fields} />;
@@ -20,12 +21,11 @@ export default class Citation extends React.Component {
       case 'wiki':
         return <CitationWikipedia className="wiki" {...fields} />;
       default:
-        return <div>No Viewer Avaialable for type: {item.type}</div>;
+        return <div>No Viewer Avaialable for type: {this.props.citationType}</div>;
     }
   }
 
   render() {
-    let fields = this.props.fields
     return (
         <div className="citation">
           {this._citationType()}

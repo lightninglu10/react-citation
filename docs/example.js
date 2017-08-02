@@ -21,7 +21,7 @@ var App = _react2.default.createClass({
   displayName: 'App',
   render: function render() {
     var items = [{
-      focus: true,
+      focus: false,
       type: 'details',
       label: 'Details',
       fields: [{
@@ -39,7 +39,7 @@ var App = _react2.default.createClass({
         field_values: [{ text: 'Grant provided to the Minnesota Digital Library Coalition through the Library Services and Technology Act (LSTA) and the State Library Services and School Technology unit of the Minnesota Department of Education' }]
       }]
     }, {
-      focus: false,
+      focus: true,
       type: 'citation',
       label: 'Citation',
       fields: {
@@ -107,7 +107,7 @@ var App = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_reactCitation2.default, { items: items })
+      _react2.default.createElement(_reactCitation2.default, { items: items, citationType: 'mla' })
     );
   }
 });
