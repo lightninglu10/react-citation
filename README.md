@@ -18,7 +18,7 @@ Then open [`localhost:8000`](http://localhost:8000) in a browser.
 
 ## Installation
 
-Include react-citation as part of your dependency list:
+Include react-citation as part of your package.json dependency list:
 
 ```
 ...
