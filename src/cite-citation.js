@@ -7,19 +7,29 @@ import CitationWikipedia from './cite-citation-wikipedia'
 export default class Citation extends React.Component {
   constructor(props) {
     super(props)
+
+    this._citationType = this._citationType.bind(this);
+  }
+
+  _citationType() {
+    const item = this.props.getActiveItem();
+    switch (item.type) {
+      case 'chicago':
+        return <CitationChicago className="chicago" {...fields} />;
+      case 'mla':
+        return <CitationMla className="mla" {...fields} />;
+      case 'wiki':
+        return <CitationWikipedia className="wiki" {...fields} />;
+      default:
+        return <div>No Viewer Avaialable for type: {item.type}</div>;
+    }
   }
 
   render() {
     let fields = this.props.fields
     return (
         <div className="citation">
-          <div><CitationCoins {...fields} /></div>
-          <h3>Chicago Style</h3>
-          <div><CitationChicago {...fields} /></div>
-          <h3>MLA Style</h3>
-          <div><CitationMla {...fields} /></div>
-          <h3>Wikipedia Style</h3>
-          <div><CitationWikipedia {...fields} /></div>
+          {this._citationType()}
         </div>
       )
   }

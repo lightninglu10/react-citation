@@ -20,7 +20,7 @@ class ReactCitation extends React.Component {
       case 'details':
         return <Details fields={item.fields} />;
       case 'citation':
-        return <Citation fields={item.fields} />;
+        return <Citation fields={item.fields} citationType={this.props.citationType} />;
       case 'download':
         return <Download fields={item.fields} />;
       case 'transcript':

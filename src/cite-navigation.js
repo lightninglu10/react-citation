@@ -18,8 +18,12 @@ export default class CiteNavigation extends React.Component {
 
   render() {
     const { items, class_name, setActiveItem, getActiveItem } = this.props
-    let active_class = this.active_class
-    return (<ul className={'citation-navigation ' + class_name}>
+    let active_class = this.active_class;
+    var style = {}
+    if (!this.props.navigation) {
+      style['display'] = 'none';
+    }
+    return (<ul className={'citation-navigation ' + class_name} style={style}>
               {items.map(function(item, i) {
                 return (
                   <CiteNavigationItem label={item.label}
