@@ -5558,6 +5558,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
@@ -5594,51 +5596,40 @@ var Citation = function (_React$Component) {
   function Citation(props) {
     _classCallCheck(this, Citation);
 
-    return _possibleConstructorReturn(this, (Citation.__proto__ || Object.getPrototypeOf(Citation)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Citation.__proto__ || Object.getPrototypeOf(Citation)).call(this, props));
+
+    _this._citationType = _this._citationType.bind(_this);
+    return _this;
   }
 
   _createClass(Citation, [{
+    key: '_citationType',
+    value: function _citationType() {
+      var item = this.props.getActiveItem();
+      switch (item.type) {
+        case 'chicago':
+          return _react2.default.createElement(_citeCitationChicago2.default, _extends({ className: 'chicago' }, fields));
+        case 'mla':
+          return _react2.default.createElement(_citeCitationMla2.default, _extends({ className: 'mla' }, fields));
+        case 'wiki':
+          return _react2.default.createElement(_citeCitationWikipedia2.default, _extends({ className: 'wiki' }, fields));
+        default:
+          return _react2.default.createElement(
+            'div',
+            null,
+            'No Viewer Avaialable for type: ',
+            item.type
+          );
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var fields = this.props.fields;
       return _react2.default.createElement(
         'div',
         { className: 'citation' },
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_citeCitationCoins2.default, fields)
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Chicago Style'
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_citeCitationChicago2.default, fields)
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'MLA Style'
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_citeCitationMla2.default, fields)
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Wikipedia Style'
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_citeCitationWikipedia2.default, fields)
-        )
+        this._citationType()
       );
     }
   }]);
@@ -6164,9 +6155,13 @@ var CiteNavigation = function (_React$Component) {
           getActiveItem = _props.getActiveItem;
 
       var active_class = this.active_class;
+      var style = {};
+      if (!this.props.navigation) {
+        style['display'] = 'none';
+      }
       return _react2.default.createElement(
         'ul',
-        { className: 'citation-navigation ' + class_name },
+        { className: 'citation-navigation ' + class_name, style: style },
         items.map(function (item, i) {
           return _react2.default.createElement(_citeNavigationItem2.default, { label: item.label,
             key: i,
@@ -6362,7 +6357,7 @@ var ReactCitation = function (_React$Component) {
         case 'details':
           return _react2.default.createElement(_citeDetails2.default, { fields: item.fields });
         case 'citation':
-          return _react2.default.createElement(_citeCitation2.default, { fields: item.fields });
+          return _react2.default.createElement(_citeCitation2.default, { fields: item.fields, citationType: this.props.citationType });
         case 'download':
           return _react2.default.createElement(_citeDownload2.default, { fields: item.fields });
         case 'transcript':

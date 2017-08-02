@@ -13,10 +13,11 @@
     "url": "https://github.com/chadfennell/react-citation/issues"
   },
   "dependencies": {
-    "classnames": "^2.1.2",    
+    "classnames": "^2.1.2",
+    "gulp": "^3.9.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-active-item": "ssh://git@github.com/UMNLibraries/react-active-item.git#e49bc7cc670806e82fea7"
+    "react-active-item": "ssh://git@github.com/UMNLibraries/react-active-item.git#e49bc7cc670806e82fea7",
+    "react-dom": "^15.3.2"
   },
   "devDependencies": {
     "react-component-gulp-tasks": "ssh://git@github.com/cwalv/react-component-gulp-tasks.git#0253184f9d",
