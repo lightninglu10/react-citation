@@ -22,7 +22,7 @@ Include react-citation as part of your package.json dependency list:
 
 ```
 ...
-    "dependencies": {
+  "dependencies": {
     "react": "^15.4.1",
     "react-citation": "git+https://github.com/UMNLibraries/react-citation.git#51682c87e55bd",
     "react-dom": "^15.4.1"
