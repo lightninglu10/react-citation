@@ -12,8 +12,7 @@ export default class Citation extends React.Component {
   }
 
   _citationType() {
-    const item = this.props.getActiveItem();
-    switch (item.type) {
+    switch (this.props.citationType) {
       case 'chicago':
         return <CitationChicago className="chicago" {...fields} />;
       case 'mla':

@@ -5605,8 +5605,7 @@ var Citation = function (_React$Component) {
   _createClass(Citation, [{
     key: '_citationType',
     value: function _citationType() {
-      var item = this.props.getActiveItem();
-      switch (item.type) {
+      switch (this.props.citationType) {
         case 'chicago':
           return _react2.default.createElement(_citeCitationChicago2.default, _extends({ className: 'chicago' }, fields));
         case 'mla':
