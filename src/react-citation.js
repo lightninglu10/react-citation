@@ -1,5 +1,4 @@
 import React from 'react';
-import ActiveItem from 'react-active-item';
 
 import CiteNavigation from './cite-navigation';
 import Details from './cite-details';
@@ -15,27 +14,13 @@ class ReactCitation extends React.Component {
   }
 
   _viewer() {
-    const item = this.props.getActiveItem();
-    switch (item.type) {
-      case 'details':
-        return <Details fields={item.fields} />;
-      case 'citation':
-        return <Citation fields={item.fields} citationType={this.props.citationType} />;
-      case 'download':
-        return <Download fields={item.fields} />;
-      case 'transcript':
-        return <Transcript transcript={item.transcript} />;
-      default:
-        return <div>No Viewer Avaialable for type: {item.type}</div>;
-    }
+    return <Citation fields={this.props.items.fields} citationType={this.props.citationType} />;
   }
 
   render() {
-    const type = this.props.getActiveItem().type;
     return (
       <div>
-        <CiteNavigation {...this.props} />
-        <div className={`cite-${type}`}>
+        <div className={`cite-citation`}>
           {this._viewer()}
         </div>
       </div>
@@ -45,9 +30,8 @@ class ReactCitation extends React.Component {
 
 const propTypes = {
   items: React.PropTypes.array.isRequired,
-  getActiveItem: React.PropTypes.func.isRequired,
 };
 
 ReactCitation.propTypes = propTypes;
 
-export default ActiveItem(ReactCitation);
+export default ReactCitation;
